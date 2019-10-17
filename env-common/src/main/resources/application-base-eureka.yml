@@ -1,0 +1,5 @@
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://eureka-01:8761/eureka/,http://eureka-02:8761/eureka/,http://eureka-03:8761/eureka/

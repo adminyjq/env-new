@@ -1,0 +1,15 @@
+server:
+  port: 8761
+
+spring:
+  profiles:
+    include: base
+
+eureka:
+  client:
+    fetch-registry: false
+
+#日志相关配置
+logging:
+  level: info
+  file: env-eureka-server.log

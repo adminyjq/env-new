@@ -1,0 +1,17 @@
+server:
+  port: 10101
+
+spring:
+  profiles:
+    include:
+      - base
+      - "base-api"
+
+
+#日志相关配置
+logging:
+  level: info
+  file: env-patrol-service.log
+
+
+

@@ -1,0 +1,25 @@
+server:
+  port: 17000
+
+spring:
+  application:
+    name: config-center
+  profiles:
+    include:
+      - base
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://git.dev.tencent.com/guxiansheng/env-config-center.git
+          search-paths:
+            - config
+            - "{application}"
+          username: 745698872@qq.com
+          password: ds10262018
+          force-pull: true
+
+#日志相关配置
+logging:
+  level: info
+  file: env-config-center.log

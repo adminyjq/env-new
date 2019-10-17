@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: eureka-server
+  profiles:
+    active: prod
+
+---
+
+spring:
+  profiles: dev
+  cloud:
+    config:
+      uri: http://config-center:17000
+      label: master
+      name: common
+      profile: dev
+
+---
+
+spring:
+  profiles: prod
+  cloud:
+    config:
+      uri: http://config-center:17000
+      label: master
+      name: common
+      profile: prod
+
+---
+
+spring:
+  profiles: test
+  cloud:
+    config:
+      uri: http://config-center:17000
+      label: master
+      name: common
+      profile: test

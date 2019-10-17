@@ -1,0 +1,36 @@
+server:
+  port: 10555
+
+spring:
+  profiles:
+    include:
+      - base
+
+# routes 分布式事务
+zuul:
+  SendErrorFilter:
+    error:
+      disable: true
+
+
+ribbon:
+  ConnectTimeout: 2000
+  ReadTimeout: 8000
+  OkToRetryOnAllOperations: false
+  MaxAutoRetriesNextServer: 1
+  MaxAutoRetries: 0
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
+
+
+
+#日志相关配置
+logging:
+  level: info
+  file: env-api-gateway.log

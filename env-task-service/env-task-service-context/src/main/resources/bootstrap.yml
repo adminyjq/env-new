@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: api-task
+  profiles:
+    active: prod
+
+---
+
+spring:
+  profiles: dev
+  cloud:
+    config:
+      uri: http://config-center:17000
+      label: master
+      name: common,api-task,mybatis,db
+      profile: dev
+
+---
+
+spring:
+  profiles: prod
+  cloud:
+    config:
+      uri: http://config-center:17000
+      label: master
+      name: common,api-task,mybatis,db
+      profile: prod
+
+---
+
+spring:
+  profiles: test
+  cloud:
+    config:
+      uri: http://config-center:17000
+      label: master
+      name: common,api-task,mybatis,db
+      profile: test

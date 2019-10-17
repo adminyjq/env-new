@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: api-gateway
+  profiles:
+    active: dev
+
+---
+
+spring:
+  profiles: dev
+  cloud:
+    config:
+      uri: http://config-center:17000
+      label: master
+      name: common,api-gateway,decorate
+      profile: dev
+
+---
+
+spring:
+  profiles: prod
+  cloud:
+    config:
+      uri: http://config-center:17000
+      label: master
+      name: common,api-gateway,decorate
+      profile: prod
+
+---
+
+spring:
+  profiles: test
+  cloud:
+    config:
+      uri: http://config-center:17000
+      label: master
+      name: common,api-gateway,decorate
+      profile: test

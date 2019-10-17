@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>env-patrol-service</artifactId>
+        <groupId>com.env</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>env-patrol-service-feign</artifactId>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-feign</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-hystrix</artifactId>
+        </dependency>
+
+        <!-- Self -->
+        <dependency>
+            <groupId>com.env</groupId>
+            <artifactId>env-common</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.env</groupId>
+            <artifactId>env-patrol-service-domain</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>env-patrol-service-feign</finalName>
+    </build>
+
+</project>

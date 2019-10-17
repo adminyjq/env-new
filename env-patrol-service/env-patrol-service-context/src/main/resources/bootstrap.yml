@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: api-patrol
+  profiles:
+    active: prod
+
+---
+
+spring:
+  profiles: dev
+  cloud:
+    config:
+      uri: http://config-center:17000
+      label: master
+      name: common,api-patrol,mybatis,db
+      profile: dev
+
+---
+
+spring:
+  profiles: prod
+  cloud:
+    config:
+      uri: http://config-center:17000
+      label: master
+      name: common,api-patrol,mybatis,db
+      profile: prod
+
+---
+
+spring:
+  profiles: test
+  cloud:
+    config:
+      uri: http://config-center:17000
+      label: master
+      name: common,api-patrol,mybatis,db
+      profile: test
